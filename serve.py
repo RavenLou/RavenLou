@@ -10,7 +10,8 @@ def myFunc():
         subprocess.Popen(['python3', 'stress_cpu.py'])
         return 'success'
     else:
-        ip = socket.gethostbyname('ec2-3-86-151-208.compute-1.amazonaws.com')
+        hostname = socket.gethostname()
+        ip = socket.gethostbyname(hostname)
         return '%s' % ip
 
 if __name__ == '__main__':
